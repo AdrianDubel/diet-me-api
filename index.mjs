@@ -1,13 +1,4 @@
 
-import express from 'express';
-const app = express();
-const port = 3000;
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
-
   const meals = [
     {
       "name": "Jogurt z owocami",
@@ -100,12 +91,3 @@ app.use(function(req, res, next) {
       "instructions": "Ziemniaki obierz, pokrój w plastry i ugotuj w osolonej wodzie.\nBoczek pokrój w kostkę i podsmaż na patelni.\nCebulę i czosnek posiekaj i dodaj do boczku. Smaż przez około 5 minut.\nW małym garnku podgrzej śmietanę.\nDo naczynia żaroodpornego włoż kolejno ziemniaki, boczek z cebulą i czosnkiem, a następnie wlej śmietanę.\nPosyp startym serem i wstaw do piekarnika nagrzanego do 200°C na około 20 minut."
     }
   ]
-  
-
-app.get('/meals', (req, res) => {
-  res.json(meals);
-});
-
-app.listen(port, () => {
-  console.log(`API dostępne pod adresem http://localhost:${port}`);
-});
